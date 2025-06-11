@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея изображений</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 333px);
+            grid-gap: 20px;
+        }
+        .image-container {
+            position: relative;
+            width: 333px;
+            height: 200px;
+            transition: transform 0.3s;
+        }
+        .image-container:hover {
+            transform: scale(1.02);
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .preview {
+            visibility: hidden;
+            width: 420px;
+            background-color: white;
+            color: #333;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 100;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .preview-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #444;
+        }
+        .image-container:hover .preview {
+            visibility: visible;
+            opacity: 1;
+        }
+        .preview::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <!-- Первая строка -->
+        <div class="image-container">
+            <img src="file:///D:/projects/Karnizi_06_2025/prev/1.png" alt="Image 1">
+            <div class="preview">
+                <div class="preview-title">Фотографии из папки 1:</div>
+                <div style="display:flex; flex-wrap:wrap; max-width:400px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/1/65ef22413a0a432b33321185a853a832.jpg" style="width:100px; height:auto; margin:2px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/1/f0cf687a37481940c51db6ee79799284.jpg" style="width:100px; height:auto; margin:2px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/1/good-life-gordijnroede-cap-met-ringen-zilver.jpg" style="width:100px; height:auto; margin:2px;"></div>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="file:///D:/projects/Karnizi_06_2025/prev/2.png" alt="Image 2">
+            <div class="preview">
+                <div class="preview-title">Фотографии из папки 2:</div>
+                <div style="display:flex; flex-wrap:wrap; max-width:400px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/2/1678927890462_bulletin.jpg" style="width:100px; height:auto; margin:2px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/2/305b85f94909466aded40bb0b1e45ef5.jpg" style="width:100px; height:auto; margin:2px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/2/b72ebe4b22088c28001052d4b767bda7.jpg" style="width:100px; height:auto; margin:2px;"></div>
+            </div>
+        </div>
+        
+        <!-- Вторая строка -->
+        <div class="image-container">
+            <img src="file:///D:/projects/Karnizi_06_2025/prev/3.png" alt="Image 3">
+            <div class="preview">
+                <div class="preview-title">Фотографии из папки 3:</div>
+                <div style="display:flex; flex-wrap:wrap; max-width:400px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/3/d7aeca0ebb167b05040297898ba2d9ca.jpg" style="width:100px; height:auto; margin:2px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/3/item-home-2.jpg" style="width:100px; height:auto; margin:2px;"></div>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="file:///D:/projects/Karnizi_06_2025/prev/4.png" alt="Image 4">
+            <div class="preview">
+                <div class="preview-title">Фотографии из папки 4:</div>
+                <div style="display:flex; flex-wrap:wrap; max-width:400px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/4/140.jpg" style="width:100px; height:auto; margin:2px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/4/2ba04f76-5aa1-4370-9cc7-79f15193f7f2.jpg" style="width:100px; height:auto; margin:2px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/4/8d76018103c785bd3466a4d0e0g6--dlya-doma-i-interera-karnizy-karniz-fistashkovyj-pod-starinu.jpg" style="width:100px; height:auto; margin:2px;"><img src="file:///D:/projects/Karnizi_06_2025/photo/4/edee63ac8c4a377e763fc1d714jt--dlya-doma-i-interera-metallicheskie-karnizy-diametr-16-19-25h.jpg" style="width:100px; height:auto; margin:2px;"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
